@@ -51,6 +51,14 @@ function Header() {
         <Link href="/#projects" className="hover:text-blue-600">
           Projects
         </Link>
+        <a
+          href="/Surin_Athukorala_CV.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-blue-600"
+        >
+          CV
+        </a>
       </nav>
     </header>
   );
