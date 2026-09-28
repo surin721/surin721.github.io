@@ -106,18 +106,42 @@ function Tags({ items }: { items: string[] }) {
   );
 }
 
-function Features({ items }: { items: { title: string; text: string }[] }) {
+type Feature = {
+  title: string;
+  text: string;
+  // Path to an SVG in /public, drawn as a light watermark behind the text.
+  icon?: string;
+};
+
+function Features({ items }: { items: Feature[] }) {
   return (
     <ul className="grid gap-4 sm:grid-cols-3">
       {items.map((item) => (
         <li
           key={item.title}
-          className="rounded-xl border border-gray-200 bg-white/70 p-4"
+          className="group relative overflow-hidden rounded-2xl border border-indigo-100 bg-gradient-to-br from-white to-indigo-50/70 p-5 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
         >
-          <p className="font-medium text-gray-900">{item.title}</p>
-          <p className="mt-2 text-sm text-gray-700 leading-relaxed">
-            {item.text}
-          </p>
+          {item.icon && (
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute -right-5 -bottom-5 size-32 bg-indigo-100 transition-colors duration-300 group-hover:bg-indigo-200/60"
+              style={{
+                maskImage: `url(${item.icon})`,
+                WebkitMaskImage: `url(${item.icon})`,
+                maskSize: 'contain',
+                WebkitMaskSize: 'contain',
+                maskRepeat: 'no-repeat',
+                WebkitMaskRepeat: 'no-repeat'
+              }}
+            />
+          )}
+          <div className="relative">
+            <span className="mb-4 block h-1 w-8 rounded-full bg-indigo-500" />
+            <p className="font-semibold text-gray-900">{item.title}</p>
+            <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              {item.text}
+            </p>
+          </div>
         </li>
       ))}
     </ul>
