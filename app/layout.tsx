@@ -2,12 +2,11 @@ import './globals.css';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Inter } from 'next/font/google';
-import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://next-mdx-blog.vercel.app'),
+  metadataBase: new URL('https://surinathukorala.me'),
   alternates: {
     canonical: '/'
   },
@@ -33,7 +32,6 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
-          <Analytics />
         </div>
       </body>
     </html>

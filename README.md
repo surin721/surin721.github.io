@@ -1,35 +1,21 @@
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fleerob%2Fnext-mdx-blog)
+# surinathukorala.me
 
-# next-mdx-blog
+Personal portfolio of Surin Athukorala, built with Next.js, MDX and Tailwind CSS
+(based on [leerob/next-mdx-blog](https://github.com/leerob/next-mdx-blog)).
 
-This is a blog template built with:
-
-- **Framework**: [Next.js](https://nextjs.org)
-- **Deployment**: [Vercel](https://vercel.com)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com)
-- **Analytics**: [Vercel Analytics](https://vercel.com/analytics)
-- **Database** (Optional): [Postgres](https://vercel.com/postgres)
-
-## Running Locally
-
-This application requires Node.js v18.17+.
+## Development
 
 ```bash
-git clone https://github.com/leerob/next-mdx-blog.git
-cd next-mdx-blog
 pnpm install
 pnpm dev
 ```
 
-## Database (Optional)
+Edit the home page in `app/page.mdx`. Add posts as `app/n/<slug>/page.mdx`.
 
-Create a `.env.local` file with your `POSTGRES_URL` environment variable to store redirects.
+To replace the photo placeholder, add an image to `public/` (e.g. `public/profile.jpg`)
+and pass `image="/profile.jpg"` to `<Hero>` in `app/page.mdx`.
 
-```sql
-CREATE TABLE redirects (
-  id SERIAL PRIMARY KEY,
-  source VARCHAR(255) NOT NULL,
-  destination VARCHAR(255) NOT NULL,
-  permanent BOOLEAN NOT NULL
-);
-```
+## Deployment
+
+Pushes to `main` build a static export (`out/`) and deploy it to GitHub Pages via
+`.github/workflows/deploy.yml`, served at [surinathukorala.me](https://surinathukorala.me).
