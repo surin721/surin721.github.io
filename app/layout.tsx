@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.className}`}>
       <body className="antialiased tracking-tight">
-        <div className="min-h-screen flex flex-col justify-between p-6 md:p-8 bg-white text-gray-900">
+        <div className="min-h-screen flex flex-col justify-between p-6 md:p-8 text-gray-900">
           <Header />
           <main className="max-w-3xl mx-auto w-full space-y-6">
             {children}
