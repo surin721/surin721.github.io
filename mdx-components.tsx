@@ -106,10 +106,39 @@ function Tags({ items }: { items: string[] }) {
   );
 }
 
+function Features({ items }: { items: { title: string; text: string }[] }) {
+  return (
+    <ul className="grid gap-4 sm:grid-cols-3">
+      {items.map((item) => (
+        <li
+          key={item.title}
+          className="rounded-xl border border-gray-200 bg-white/70 p-4"
+        >
+          <p className="font-medium text-gray-900">{item.title}</p>
+          <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+            {item.text}
+          </p>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function SkillGroup({ label, items }: { label: string; items: string[] }) {
+  return (
+    <div className="space-y-2">
+      <p className="text-sm font-medium text-gray-500">{label}</p>
+      <Tags items={items} />
+    </div>
+  );
+}
+
 const components = {
   Hero,
   Role,
   Tags,
+  Features,
+  SkillGroup,
   h1: (props: HeadingProps) => (
     <h1 className="font-medium pt-12 mb-0" {...props} />
   ),

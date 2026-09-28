@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: '%s | Surin Athukorala'
   },
   description:
-    'Surin Athukorala — Senior Software Engineer at Neurotechnology Lab, Sri Lanka. Portfolio and writing.'
+    'Surin Athukorala — Senior Full-Stack Software Engineer with 10+ years of experience in React, Angular, Java, Spring Boot and Node.js. Available for freelance projects.'
 };
 
 export default function RootLayout({

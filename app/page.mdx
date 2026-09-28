@@ -2,19 +2,11 @@ import { LatestPosts } from '@/components/post-list';
 
 <Hero
   name="Surin Athukorala"
-  title="Senior Software Engineer at Neurotechnology Lab"
-  location="Galle, Sri Lanka"
+  title="Senior Full-Stack Software Engineer"
+  location="10+ years of industry experience · Galle, Sri Lanka"
   image="/profile.jpg"
 >
-  <p className="text-gray-700 leading-relaxed">
-    I'm a software engineer with over a decade of experience at
-    Neurotechnology Lab, building web applications with React, Angular and
-    JavaScript, from design in Figma through to production.
-  </p>
-  <p className="text-gray-700 leading-relaxed">
-    I hold a BSc in Computer Science from Uva Wellassa University and an MSc
-    in Information Technology from SLIIT.
-  </p>
+  <p className="text-gray-700 leading-relaxed">Hello! I am a Senior Software Engineer with over a decade of hands-on industrial experience building, scaling, and optimizing high-performance software solutions.</p>
   <p className="flex flex-wrap gap-3 text-sm">
     <a
       href="https://www.linkedin.com/in/surinathukorala"
@@ -40,6 +32,31 @@ import { LatestPosts } from '@/components/post-list';
     >Experience</a>
   </p>
 </Hero>
+
+## The Full-Cycle Advantage
+
+Coming from a background of working within dynamic, highly collaborative agile teams, I have successfully worn multiple hats across the entire Software Development Life Cycle (SDLC). I don't just write code—I understand the business behind it.
+
+Because I am experienced in seamlessly transitioning between roles, I bring a holistic approach to your project. From capturing precise business requirements and architecting the initial design to rigorous testing and final delivery, I ensure every technical decision aligns perfectly with your business goals.
+
+## Why Work With Me
+
+<Features
+  items={[
+    {
+      title: 'Analytical Problem-Solver',
+      text: 'I excel at breaking down complex business challenges into logical, efficient, and scalable technical solutions.'
+    },
+    {
+      title: 'Clear Communicator',
+      text: 'I bridge the gap between technical and non-technical stakeholders, ensuring complete transparency and alignment throughout the development process.'
+    },
+    {
+      title: 'Highly Flexible & Collaborative',
+      text: 'I believe the best products are built through open discussion. I am highly adaptable to shifting requirements and always ready to brainstorm the most effective approach for your specific needs.'
+    }
+  ]}
+/>
 
 ## Experience
 
@@ -71,22 +88,29 @@ import { LatestPosts } from '@/components/post-list';
   period="2010 – 2015"
 />
 
-## Skills
+## Technical Expertise
 
-<Tags
-  items={[
-    'JavaScript',
-    'React.js',
-    'Angular',
-    'AngularJS',
-    'HTML',
-    'Bootstrap',
-    'WordPress',
-    'Figma',
-    'Web Design',
-    'Git',
-    'Subversion'
-  ]}
-/>
+I specialize in both crafting intuitive, responsive user interfaces and engineering resilient, scalable backend systems.
+
+<div className="space-y-4">
+  <SkillGroup
+    label="Frontend Development"
+    items={['React', 'Angular', 'AngularJS', 'JavaScript', 'HTML', 'Bootstrap']}
+  />
+  <SkillGroup
+    label="Backend Architecture"
+    items={['Java', 'Spring Boot', 'Node.js']}
+  />
+  <SkillGroup
+    label="Tools & Design"
+    items={['Figma', 'Web Design', 'WordPress', 'Git', 'Subversion']}
+  />
+</div>
 
 <LatestPosts />
+
+<section className="mt-12 rounded-2xl border border-gray-200 bg-white/70 p-6 md:p-8 text-center space-y-4">
+  <p className="text-gray-700 leading-relaxed">Whether you need to build a web application from scratch, modernize an existing platform, or scale your backend infrastructure, I am here to help.</p>
+  <p className="text-xl font-semibold text-gray-900">Let’s turn your vision into reality.</p>
+  <p className="text-sm"><a href="https://www.linkedin.com/in/surinathukorala" target="_blank" rel="noopener noreferrer" className="inline-block rounded-md bg-gray-900 px-5 py-2.5 text-white hover:bg-gray-700">Send me a message to discuss your project</a></p>
+</section>
