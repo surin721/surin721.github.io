@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Inter } from 'next/font/google';
+import { getPosts } from '@/lib/posts';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -28,7 +29,7 @@ export default function RootLayout({
       <body className="antialiased tracking-tight">
         <div className="min-h-screen flex flex-col justify-between p-6 md:p-8 text-gray-900">
           <Header />
-          <main className="max-w-3xl mx-auto w-full space-y-6">
+          <main className="flex-1 max-w-3xl mx-auto w-full space-y-6">
             {children}
           </main>
           <Footer />
@@ -38,7 +39,9 @@ export default function RootLayout({
   );
 }
 
-function Header() {
+async function Header() {
+  const hasPosts = (await getPosts()).length > 0;
+
   return (
     <header className="max-w-3xl mx-auto w-full flex items-center justify-between">
       <Link href="/" className="font-medium text-gray-900">
@@ -48,6 +51,11 @@ function Header() {
         <Link href="/#experience" className="hover:text-blue-600">
           Experience
         </Link>
+        {hasPosts && (
+          <Link href="/blog" className="hover:text-blue-600">
+            Blog
+          </Link>
+        )}
         <a
           href="/Surin_Athukorala_CV.pdf"
           target="_blank"

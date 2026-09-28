@@ -202,6 +202,9 @@ const components = {
       </tbody>
     </table>
   ),
+  img: ({ alt, ...props }: ComponentPropsWithoutRef<'img'>) => (
+    <img alt={alt ?? ''} className="my-6 w-full rounded-lg" {...props} />
+  ),
   blockquote: (props: BlockquoteProps) => (
     <blockquote
       className="ml-[0.075em] border-l-3 border-gray-300 pl-4 text-gray-700"

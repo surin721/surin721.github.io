@@ -14,8 +14,10 @@
     "@types/mdx": "^2.0.13",
     "framer-motion": "^12.16.0",
     "next": "16.2.11",
+    "next-mdx-remote": "6",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "remark-gfm": "4",
     "sugar-high": "^0.9.3"
   },
   "devDependencies": {

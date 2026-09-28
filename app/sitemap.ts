@@ -1,39 +1,23 @@
-import { promises as fs } from 'fs';
-import path from 'path';
+import { getPosts } from '@/lib/posts';
 
 export const dynamic = 'force-static';
 
 const SITE_URL = 'https://surin721.github.io';
 
-async function getNoteSlugs(dir: string) {
-  const entries = await fs
-    .readdir(dir, { recursive: true, withFileTypes: true })
-    .catch(() => []);
-  return entries
-    .filter((entry) => entry.isFile() && entry.name === 'page.mdx')
-    .map((entry) => {
-      const relativePath = path.relative(
-        dir,
-        path.join(entry.parentPath, entry.name)
-      );
-      return path.dirname(relativePath);
-    })
-    .map((slug) => slug.replace(/\\/g, '/'));
-}
-
 export default async function sitemap() {
-  const notesDirectory = path.join(process.cwd(), 'app', 'n');
-  const slugs = await getNoteSlugs(notesDirectory);
+  const posts = await getPosts();
 
-  const notes = slugs.map((slug) => ({
-    url: `${SITE_URL}/n/${slug}`,
-    lastModified: new Date().toISOString()
+  const routes = ['', ...(posts.length > 0 ? ['/blog'] : [])].map(
+    (route) => ({
+      url: `${SITE_URL}${route}`,
+      lastModified: new Date().toISOString()
+    })
+  );
+
+  const articles = posts.map((post) => ({
+    url: `${SITE_URL}/blog/${post.slug}`,
+    lastModified: post.date
   }));
 
-  const routes = [''].map((route) => ({
-    url: `${SITE_URL}${route}`,
-    lastModified: new Date().toISOString()
-  }));
-
-  return [...routes, ...notes];
+  return [...routes, ...articles];
 }
