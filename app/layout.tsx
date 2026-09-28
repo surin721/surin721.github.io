@@ -48,9 +48,6 @@ function Header() {
         <Link href="/#experience" className="hover:text-blue-600">
           Experience
         </Link>
-        <Link href="/#projects" className="hover:text-blue-600">
-          Projects
-        </Link>
         <a
           href="/Surin_Athukorala_CV.pdf"
           target="_blank"
