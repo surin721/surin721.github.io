@@ -6,7 +6,7 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://surinathukorala.me'),
+  metadataBase: new URL('https://surin721.github.io'),
   alternates: {
     canonical: '/'
   },

@@ -1,4 +1,4 @@
-# surinathukorala.me
+# surin721.github.io
 
 Personal portfolio of Surin Athukorala, built with Next.js, MDX and Tailwind CSS
 (based on [leerob/next-mdx-blog](https://github.com/leerob/next-mdx-blog)).
@@ -18,4 +18,4 @@ and pass `image="/profile.jpg"` to `<Hero>` in `app/page.mdx`.
 ## Deployment
 
 Pushes to `main` build a static export (`out/`) and deploy it to GitHub Pages via
-`.github/workflows/deploy.yml`, served at [surinathukorala.me](https://surinathukorala.me).
+`.github/workflows/deploy.yml`, served at [surin721.github.io](https://surin721.github.io).

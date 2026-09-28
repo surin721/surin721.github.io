@@ -3,7 +3,7 @@ import path from 'path';
 
 export const dynamic = 'force-static';
 
-const SITE_URL = 'https://surinathukorala.me';
+const SITE_URL = 'https://surin721.github.io';
 
 async function getNoteSlugs(dir: string) {
   const entries = await fs
