@@ -43,7 +43,7 @@ function Hero({ name, title, location, children, image }: HeroProps) {
           <img
             src={image}
             alt={name}
-            className="aspect-square w-full rounded-2xl object-cover"
+            className="aspect-square w-full rounded-full object-cover shadow-md ring-4 ring-white"
           />
         ) : (
           <div
