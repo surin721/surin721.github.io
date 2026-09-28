@@ -24,16 +24,19 @@ html {
 
 body {
   text-rendering: optimizeLegibility;
-  /* Ruled-paper background */
-  background-color: #e5e5f7;
-  background-size: 20px 20px;
-  background-image: repeating-linear-gradient(
-    0deg,
-    #444cf7,
-    #444cf7 1px,
-    #e5e5f7 1px,
-    #e5e5f7
-  );
+  /* Soft indigo glow at the top over a faint dot grid */
+  background-color: #fafafa;
+  background-image:
+    radial-gradient(
+      ellipse 80% 50% at 50% -10%,
+      rgb(99 102 241 / 0.12),
+      transparent 70%
+    ),
+    radial-gradient(#e2e4ea 1px, transparent 1px);
+  background-size:
+    100% 100%,
+    24px 24px;
+  background-attachment: fixed;
 }
 
 h1,
