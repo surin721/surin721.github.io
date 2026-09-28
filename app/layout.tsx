@@ -1,5 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { Inter } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 
@@ -11,10 +12,11 @@ export const metadata: Metadata = {
     canonical: '/'
   },
   title: {
-    default: 'John Smith',
-    template: '%s | John Smith'
+    default: 'Surin Athukorala',
+    template: '%s | Surin Athukorala'
   },
-  description: 'My portfolio, blog, and personal website.'
+  description:
+    'Surin Athukorala — Senior Software Engineer at Neurotechnology Lab, Sri Lanka. Portfolio and writing.'
 };
 
 export default function RootLayout({
@@ -25,8 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.className}`}>
       <body className="antialiased tracking-tight">
-        <div className="min-h-screen flex flex-col justify-between pt-0 md:pt-8 p-8 dark:bg-zinc-950 bg-white text-gray-900 dark:text-zinc-200">
-          <main className="max-w-[60ch] mx-auto w-full space-y-6">
+        <div className="min-h-screen flex flex-col justify-between p-6 md:p-8 bg-white text-gray-900">
+          <Header />
+          <main className="max-w-3xl mx-auto w-full space-y-6">
             {children}
           </main>
           <Footer />
@@ -37,16 +40,32 @@ export default function RootLayout({
   );
 }
 
+function Header() {
+  return (
+    <header className="max-w-3xl mx-auto w-full flex items-center justify-between">
+      <Link href="/" className="font-medium text-gray-900">
+        Surin Athukorala
+      </Link>
+      <nav className="flex gap-5 text-sm text-gray-500">
+        <Link href="/#experience" className="hover:text-blue-600">
+          Experience
+        </Link>
+        <Link href="/#projects" className="hover:text-blue-600">
+          Projects
+        </Link>
+      </nav>
+    </header>
+  );
+}
+
 function Footer() {
   const links = [
-    { name: '@johnsmith', url: 'https://x.com/johnsmith' },
-    { name: 'youtube', url: 'https://www.youtube.com/@johnsmith' },
-    { name: 'linkedin', url: 'https://www.linkedin.com/in/johnsmith' },
-    { name: 'github', url: 'https://github.com/johnsmith' }
+    { name: 'linkedin', url: 'https://www.linkedin.com/in/surinathukorala' },
+    { name: 'github', url: 'https://github.com/surin721' }
   ];
 
   return (
-    <footer className="mt-12 text-center">
+    <footer className="mt-16 text-center text-sm text-gray-400 space-y-2">
       <div className="flex justify-center space-x-4 tracking-tight">
         {links.map((link) => (
           <a
@@ -54,12 +73,13 @@ function Footer() {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 dark:text-gray-500 hover:text-blue-500 transition-colors duration-200"
+            className="hover:text-blue-600 transition-colors duration-200"
           >
             {link.name}
           </a>
         ))}
       </div>
+      <p>© {new Date().getFullYear()} Surin Athukorala</p>
     </footer>
   );
 }

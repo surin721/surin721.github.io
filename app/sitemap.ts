@@ -4,10 +4,9 @@ import path from 'path';
 const SITE_URL = 'https://next-mdx-blog.vercel.app';
 
 async function getNoteSlugs(dir: string) {
-  const entries = await fs.readdir(dir, {
-    recursive: true,
-    withFileTypes: true
-  });
+  const entries = await fs
+    .readdir(dir, { recursive: true, withFileTypes: true })
+    .catch(() => []);
   return entries
     .filter((entry) => entry.isFile() && entry.name === 'page.mdx')
     .map((entry) => {
